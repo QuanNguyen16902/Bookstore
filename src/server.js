@@ -18,7 +18,15 @@ db.sequelize
   .catch((err) => {
     console.error("Error syncing database:", err);
   });
+app.get("/", (req, res) => {
+  res.send("Hello from Vercel!");
+});
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 app.use("/auth", authRoutes);
 app.use("/api", protectedRoutes);
 
