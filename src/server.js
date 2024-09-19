@@ -26,8 +26,8 @@ db.sequelize
 app.use("/auth", authRoutes);
 app.use("/api", protectedRoutes);
 
-// Khởi chạy server
-const PORT = process.env.PORT || 8080; // Sử dụng cổng từ biến môi trường hoặc cổng mặc định
+// Chạy server
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
